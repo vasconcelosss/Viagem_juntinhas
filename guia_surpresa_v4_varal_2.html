@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma surpresa so sua · Julho 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:        #0c0406;
+  --bg2:       #130608;
+  --bg3:       #1a090c;
+  --panel:     #1f0b0e;
+  --border:    rgba(180,20,40,0.18);
+  --border-hi: rgba(180,20,40,0.38);
+  --accent:    #b8152a;
+  --accent-hi: #d01e35;
+  --accent-lo: rgba(184,21,42,0.12);
+  --gold:      #c4a97d;
+  --gold-lo:   rgba(196,169,125,0.12);
+  --text:      #ede0e2;
+  --text-mid:  rgba(237,224,226,0.5);
+  --text-low:  rgba(237,224,226,0.28);
+  --radius:    16px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 32px 72px;
+  text-align: center;
+  overflow: hidden;
+  background: var(--bg2);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(184,21,42,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 50% 100%, rgba(184,21,42,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-ornament {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  margin: 0 auto 36px;
+  opacity: 0;
+  animation: fadeUp .8s ease forwards .1s;
+}
+
+.hero-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp .8s ease forwards .2s;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 10vw, 88px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeUp .9s ease forwards .35s;
+}
+
+.hero-title em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.9;
+  max-width: 340px;
+  margin: 0 auto 52px;
+  opacity: 0;
+  animation: fadeUp .8s ease forwards .5s;
+}
+
+.dates-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--border-hi);
+  border-radius: 14px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp .8s ease forwards .65s;
+}
+
+.date-cell {
+  padding: 20px 28px;
+  text-align: center;
+  position: relative;
+}
+
+.date-cell + .date-cell::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 1px;
+  background: var(--border);
+}
+
+.date-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.date-l {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-top: 5px;
+}
+
+/* ─── COUNTDOWN ─── */
+.countdown-wrap {
+  margin-top: 48px;
+  opacity: 0;
+  animation: fadeUp .8s ease forwards .8s;
+}
+
+.countdown-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.countdown-blocks {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  justify-content: center;
+}
+
+.cd-block {
+  text-align: center;
+  min-width: 58px;
+}
+
+.cd-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1;
+  display: block;
+}
+
+.cd-unit {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-top: 6px;
+  display: block;
+}
+
+.cd-colon {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  padding-bottom: 10px;
+  opacity: .4;
+}
+
+.countdown-arrived {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-style: italic;
+  color: var(--accent);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12,4,6,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.progress-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.progress-track {
+  flex: 1;
+  height: 1px;
+  background: var(--border-hi);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 1px;
+  width: 0%;
+  transition: width .5s cubic-bezier(.4,0,.2,1);
+}
+
+.progress-count {
+  font-size: 11px;
+  color: var(--text-low);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── SECTION WRAPPER ─── */
+.section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+.section-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 40px;
+}
+
+.section-title strong {
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ─── DIVIDER ─── */
+.rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-hi), transparent);
+  margin: 0 24px;
+}
+
+/* ─── CLIMA ─── */
+.clima-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.clima-card {
+  background: var(--panel);
+  padding: 28px 16px;
+  text-align: center;
+}
+
+.clima-icon-text {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-bottom: 14px;
+}
+
+.clima-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1;
+}
+
+.clima-desc {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-top: 8px;
+}
+
+/* ─── PLAYLIST ─── */
+.playlist-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.playlist-card {
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.playlist-top {
+  padding: 28px 28px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.playlist-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--accent-lo);
+  border: 1px solid var(--border-hi);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.playlist-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent);
+}
+
+.playlist-info-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-bottom: 5px;
+}
+
+.playlist-info-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+}
+
+.playlist-desc {
+  padding: 20px 28px;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  border-bottom: 1px solid var(--border);
+}
+
+.playlist-embed {
+  padding: 20px 28px 28px;
+}
+
+.playlist-embed iframe {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  display: block;
+}
+
+/* ─── CRONOGRAMA ─── */
+.cron-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.day-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border-hi);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 36px;
+  width: fit-content;
+}
+
+.day-tab {
+  background: none;
+  border: none;
+  padding: 10px 22px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all .2s;
+  position: relative;
+}
+
+.day-tab + .day-tab::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 1px;
+  background: var(--border);
+}
+
+.day-tab.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.day-tab:not(.active):hover {
+  color: var(--text);
+}
+
+.day-panel { display: none; }
+.day-panel.active { display: block; }
+
+.day-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.day-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px;
+  font-weight: 300;
+  color: rgba(184,21,42,0.1);
+  line-height: 1;
+  flex-shrink: 0;
+  letter-spacing: -2px;
+}
+
+.day-meta-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-bottom: 6px;
+}
+
+.day-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+}
+
+.event-list { display: flex; flex-direction: column; }
+
+.event-row {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(180,20,40,0.08);
+  align-items: start;
+}
+
+.event-row:last-child { border-bottom: none; }
+
+.event-time {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  text-transform: uppercase;
+  padding-top: 3px;
+  text-align: right;
+}
+
+.event-content {}
+
+.event-name {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.event-note {
+  font-size: 12px;
+  color: var(--text-low);
+  margin-top: 4px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.tag-surprise {
+  display: inline-block;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--border-hi);
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+
+/* ─── CHEF / CARDAPIO ─── */
+.chef-section {
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+  padding-top: 48px;
+}
+
+.chef-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.chef-monogram {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid var(--border-hi);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--accent);
+  flex-shrink: 0;
+  background: var(--accent-lo);
+}
+
+.chef-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-bottom: 3px;
+}
+
+.chef-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+}
+
+.chef-desc {
+  font-size: 13.5px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+/* ─── SUGESTAO FORM ─── */
+.sugestao-form-wrap {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.sugestao-form-inner {
+  padding: 24px;
+}
+
+.sugestao-input-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.sugestao-name-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sugestao-input {
+  flex: 1;
+  background: rgba(237,224,226,0.04);
+  border: 1px solid var(--border-hi);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s;
+}
+
+.sugestao-input:focus { border-color: rgba(184,21,42,0.5); }
+.sugestao-input::placeholder { color: var(--text-low); }
+
+.sugestao-ta {
+  width: 100%;
+  background: rgba(237,224,226,0.04);
+  border: 1px solid var(--border-hi);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  transition: border-color .2s;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.sugestao-ta:focus { border-color: rgba(184,21,42,0.5); }
+.sugestao-ta::placeholder { color: var(--text-low); }
+
+.sugestao-form-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.save-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 22px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s, opacity .2s;
+  flex-shrink: 0;
+}
+
+.save-btn:hover { background: var(--accent-hi); }
+
+.saved-flash {
+  display: none;
+  font-size: 12px;
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* ─── SUGESTOES LISTA ─── */
+.sugestoes-list-wrap {
+  border-top: 1px solid var(--border);
+  padding: 20px 24px 24px;
+}
+
+.sugestoes-list-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  margin-bottom: 16px;
+}
+
+.sugestoes-empty {
+  font-size: 13px;
+  color: var(--text-low);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.sugestao-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(180,20,40,0.07);
+}
+
+.sugestao-card:last-child { border-bottom: none; }
+
+.sugestao-card-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--accent-lo);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.sugestao-card-body { flex: 1; min-width: 0; }
+
+.sugestao-card-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.sugestao-card-text {
+  font-size: 13px;
+  color: var(--text-mid);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.sugestao-card-date {
+  font-size: 10px;
+  color: var(--text-low);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.sugestao-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-low);
+  font-size: 16px;
+  padding: 0 4px;
+  transition: color .2s;
+  line-height: 1;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.sugestao-delete:hover { color: var(--accent); }
+
+/* ─── CHECKLIST ─── */
+.checklist-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.cat-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.cat-tab {
+  background: none;
+  border: 1px solid var(--border-hi);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-low);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.cat-tab:hover { border-color: var(--accent); color: var(--text-mid); }
+
+.cat-tab.active {
+  background: var(--accent-lo);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.cat-panel { display: none; }
+.cat-panel.active { display: block; }
+
+.cat-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(180,20,40,0.07);
+  cursor: pointer;
+  transition: opacity .15s;
+}
+
+.check-item:last-child { border-bottom: none; }
+.check-item:hover { opacity: .75; }
+
+.chk-box {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(184,21,42,0.4);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.chk-box.done { background: var(--accent); border-color: var(--accent); }
+
+.chk-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(237,224,226,0.85);
+  flex: 1;
+  user-select: none;
+}
+
+.chk-note {
+  display: block;
+  font-size: 11px;
+  color: var(--text-low);
+  margin-top: 3px;
+  font-style: italic;
+}
+
+.chk-badge {
+  display: inline-block;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--border-hi);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.check-item.done .chk-text {
+  color: var(--text-low);
+  text-decoration: line-through;
+  text-decoration-color: rgba(184,21,42,0.3);
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--bg2);
+  padding: 72px 24px 80px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer-ornament {
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  margin: 0 auto 32px;
+  opacity: .5;
+}
+
+.footer-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 4vw, 40px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.4;
+  max-width: 420px;
+  margin: 0 auto 20px;
+}
+
+.footer-quote span { color: var(--accent); }
+
+.footer-dates {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--text-low);
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── MOBILE ─── */
+@media (max-width: 500px) {
+  .day-tabs { width: 100%; }
+  .day-tab { flex: 1; text-align: center; }
+  .sugestao-name-row { flex-direction: column; }
+  .clima-grid { grid-template-columns: 1fr; }
+  .dates-row { gap: 0; }
+}
+
+/* ─── LIGHTS LAYER ─── */
+#lights-layer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* ─── POLAROID ─── */
+.pol {
+  position: absolute;
+  pointer-events: none;
+  transform-origin: top center;
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(.23,1,.32,1);
+}
+.pol.show { opacity: 1; }
+
+.pol-clip {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 20px;
+  background: linear-gradient(180deg, #888 0%, #bbb 40%, #888 100%);
+  border-radius: 2px 2px 1px 1px;
+  z-index: 2;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+.pol-clip::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 2px; right: 2px;
+  height: 6px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 0 0 1px 1px;
+}
+
+.pol-frame {
+  background: #fff;
+  padding: 7px 7px 22px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6), 0 2px 6px rgba(0,0,0,0.3);
+  border-radius: 1px;
+  width: 100px;
+}
+.pol-frame img,
+.pol-frame .pol-ph {
+  display: block;
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+}
+.pol-frame .pol-ph {
+  background: linear-gradient(135deg, #1f0b0e 0%, #3a1018 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: rgba(196,169,125,0.5);
+  font-style: italic;
+}
+.pol-frame .pol-cap {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9px;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  margin-top: 5px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+
+/* ─── ENSURE CONTENT IS ABOVE LIGHTS ─── */
+.hero, .progress-bar-wrap, .section, .rule,
+.playlist-section, .cron-section, .checklist-section, .footer {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ─── TRANSPARENT BACKGROUNDS SO LIGHTS SHOW THROUGH ─── */
+body {
+  background: #0c0406 !important;
+}
+.hero {
+  background: rgba(19, 6, 8, 0.82) !important;
+}
+.hero::before {
+  display: none;
+}
+.playlist-section {
+  background: rgba(19, 6, 8, 0.80) !important;
+}
+.cron-section {
+  background: rgba(19, 6, 8, 0.80) !important;
+}
+.checklist-section {
+  background: rgba(12, 4, 6, 0.80) !important;
+}
+.footer {
+  background: rgba(19, 6, 8, 0.82) !important;
+}
+.progress-bar-wrap {
+  background: rgba(12, 4, 6, 0.88) !important;
+}
+/* sections sem background proprio ficam com o body transparente */
+.section {
+  background: transparent !important;
+}
+
+
+/* ─── SCROLL REVEAL ─── */
+.reveal-me {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal-me.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+<body>
+<div id="lights-layer"></div>
+
+
+<div class="hero">
+  <div class="hero-ornament"></div>
+  <div class="hero-label">Julho · 2026</div>
+  <h1 class="hero-title">Uma surpresa<br><em>so sua</em></h1>
+  <p class="hero-sub">Este guia tem tudo que voce precisa para se preparar.<br>O destino voce vai descobrir no dia.</p>
+
+  <div class="dates-row">
+    <div class="date-cell">
+      <div class="date-n">13</div>
+      <div class="date-l">Chegada</div>
+    </div>
+    <div class="date-cell">
+      <div class="date-n">14</div>
+      <div class="date-l">Julho</div>
+    </div>
+    <div class="date-cell">
+      <div class="date-n">15</div>
+      <div class="date-l">Volta</div>
+    </div>
+  </div>
+
+  <div class="countdown-wrap">
+    <div class="countdown-label">faltam para a aventura</div>
+    <div id="cd-blocks" class="countdown-blocks">
+      <div class="cd-block">
+        <span class="cd-num" id="cd-d">--</span>
+        <span class="cd-unit">dias</span>
+      </div>
+      <div class="cd-colon">:</div>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-h">--</span>
+        <span class="cd-unit">horas</span>
+      </div>
+      <div class="cd-colon">:</div>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-m">--</span>
+        <span class="cd-unit">min</span>
+      </div>
+      <div class="cd-colon">:</div>
+      <div class="cd-block">
+        <span class="cd-num" id="cd-s">--</span>
+        <span class="cd-unit">seg</span>
+      </div>
+    </div>
+    <div id="cd-arrived" class="countdown-arrived" style="display:none">Chegou o grande dia</div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-bar-wrap">
+  <span class="progress-label">Mala</span>
+  <div class="progress-track"><div class="progress-fill" id="pFill"></div></div>
+  <span class="progress-count" id="pCount">0 / 0</span>
+</div>
+
+<!-- CLIMA -->
+<div class="section reveal-me">
+  <div class="section-label">Condicoes</div>
+  <div class="section-title">O que esperar<br><strong>do tempo</strong></div>
+  <div class="clima-grid">
+    <div class="clima-card">
+      <div class="clima-icon-text">maxima</div>
+      <div class="clima-val">25°C</div>
+      <div class="clima-desc">Durante o dia</div>
+    </div>
+    <div class="clima-card">
+      <div class="clima-icon-text">minima</div>
+      <div class="clima-val">10°C</div>
+      <div class="clima-desc">A noite</div>
+    </div>
+    <div class="clima-card">
+      <div class="clima-icon-text">ceu</div>
+      <div class="clima-val">Seco</div>
+      <div class="clima-desc">Sem chuva</div>
+    </div>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- PLAYLIST -->
+<div class="playlist-section reveal-me">
+  <div class="section" style="padding-bottom: 72px;">
+    <div class="section-label">Para a estrada</div>
+    <div class="section-title">Nossa<br><strong>playlist</strong></div>
+    <div class="playlist-card">
+      <div class="playlist-top">
+        <div class="playlist-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        </div>
+        <div>
+          <div class="playlist-info-label">Spotify · feita com carinho</div>
+          <div class="playlist-info-name">Nossa playlist da viagem</div>
+        </div>
+      </div>
+      <div class="playlist-desc">A viagem dura em torno de 2 horas — tempo perfeito para ouvir isso juntas. Cada musica escolhida a dedo para esse momento.</div>
+      <div class="playlist-embed">
+        <iframe src="https://open.spotify.com/embed/playlist/0keq8tXg6zR5IlYncVRaAx?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CRONOGRAMA -->
+<div class="cron-section reveal-me">
+  <div class="section">
+    <div class="section-label">Programacao</div>
+    <div class="section-title">Os dias<br><strong>especiais</strong></div>
+
+    <div class="day-tabs">
+      <button class="day-tab active" onclick="showDay(0)">13</button>
+      <button class="day-tab" onclick="showDay(1)">14</button>
+      <button class="day-tab" onclick="showDay(2)">15</button>
+    </div>
+
+    <!-- DIA 13 -->
+    <div class="day-panel active" id="day-0">
+      <div class="day-header">
+        <div class="day-num">13</div>
+        <div>
+          <div class="day-meta-label">Julho · Domingo</div>
+          <div class="day-title">O comeco de tudo</div>
+        </div>
+      </div>
+      <div class="event-list">
+        <div class="event-row">
+          <div class="event-time">11h</div>
+          <div class="event-content">
+            <div class="event-name">Vou te buscar em casa</div>
+            <div class="event-note">Prontas para a aventura</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">~12h</div>
+          <div class="event-content">
+            <div class="event-name">Almoco especial juntinhas <span class="tag-surprise">lugar surpresa</span></div>
+            <div class="event-note">Uma pausa deliciosa antes da estrada</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">tarde</div>
+          <div class="event-content">
+            <div class="event-name">Partimos para o destino <span class="tag-surprise">surpresa</span></div>
+            <div class="event-note">Prepare-se para se apaixonar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIA 14 -->
+    <div class="day-panel" id="day-1">
+      <div class="day-header">
+        <div class="day-num">14</div>
+        <div>
+          <div class="day-meta-label">Julho · Segunda-feira</div>
+          <div class="day-title">Dia livre na natureza</div>
+        </div>
+      </div>
+      <div class="event-list">
+        <div class="event-row">
+          <div class="event-time">manha</div>
+          <div class="event-content">
+            <div class="event-name">Cafe quentinho + o dia todo juntas</div>
+            <div class="event-note">Trilha, cachoeira, ofuro, descanso — o que o coracao mandar</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">almoco</div>
+          <div class="event-content">
+            <div class="event-name">Cardapio especial — Chefe Ana</div>
+            <div class="event-note">Tem algum pedido? Deixa la embaixo</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">tarde</div>
+          <div class="event-content">
+            <div class="event-name">Ofuro quentinho</div>
+            <div class="event-note">O chale tem um ofuro reservado so pra nos</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">noite</div>
+          <div class="event-content">
+            <div class="event-name">Jantar especial ao ceu estrelado</div>
+            <div class="event-note">Cardapio preparado pela Chefe Ana</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIA 15 -->
+    <div class="day-panel" id="day-2">
+      <div class="day-header">
+        <div class="day-num">15</div>
+        <div>
+          <div class="day-meta-label">Julho · Terca-feira</div>
+          <div class="day-title">A despedida deliciosa</div>
+        </div>
+      </div>
+      <div class="event-list">
+        <div class="event-row">
+          <div class="event-time">manha</div>
+          <div class="event-content">
+            <div class="event-name">Ultima manha</div>
+            <div class="event-note">Aproveita cada respiro de ar puro</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">~11h</div>
+          <div class="event-content">
+            <div class="event-name">Saida + almoco misterioso <span class="tag-surprise">surpresa</span></div>
+            <div class="event-note">Uma ultima surpresa antes de voltar para casa</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">tarde</div>
+          <div class="event-content">
+            <div class="event-name">Volta para casa</div>
+            <div class="event-note">Cheias de memorias lindas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHEF ANA -->
+    <div class="chef-section">
+      <div class="chef-header">
+        <div class="chef-monogram">A</div>
+        <div>
+          <div class="chef-label">Cardapio especial</div>
+          <div class="chef-name">Chefe Ana</div>
+        </div>
+      </div>
+      <p class="chef-desc">Nos dias 13 e 14 teremos um cardapio especial preparado com muito carinho. Se tiver algum pedido, restricao ou vontade — anota aqui abaixo.</p>
+
+      <div class="sugestao-form-wrap">
+        <div class="sugestao-form-inner">
+          <label class="sugestao-input-label">Nova sugestao</label>
+          <div class="sugestao-name-row">
+            <input class="sugestao-input" id="sNome" type="text" placeholder="Seu nome" maxlength="40">
+          </div>
+          <textarea class="sugestao-ta" id="sTa" placeholder="Ex: adoro frutos do mar, nao como coentro, meu prato favorito e..." rows="3"></textarea>
+          <div class="sugestao-form-footer">
+            <button class="save-btn" onclick="addSugestao()">Enviar</button>
+            <span class="saved-flash" id="savedFlash">Anotado com carinho</span>
+          </div>
+        </div>
+
+        <div class="sugestoes-list-wrap">
+          <div class="sugestoes-list-label">Sugestoes recebidas</div>
+          <div id="sugestoes-list">
+            <div class="sugestoes-empty" id="sugestoes-empty">Nenhuma sugestao ainda.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /section -->
+</div><!-- /cron-section -->
+
+<!-- CHECKLIST -->
+<div class="checklist-section reveal-me">
+  <div class="section">
+    <div class="section-label">Preparacao</div>
+    <div class="section-title">O que<br><strong>levar</strong></div>
+    <p style="font-size:12px;color:var(--text-low);margin-bottom:28px;font-weight:300;">Toque nos itens para marcar conforme vai montando a mala.</p>
+
+    <div class="cat-tabs">
+      <button class="cat-tab active" onclick="showCat(0)">Roupas</button>
+      <button class="cat-tab" onclick="showCat(1)">Calcados</button>
+      <button class="cat-tab" onclick="showCat(2)">Higiene</button>
+      <button class="cat-tab" onclick="showCat(3)">Conforto</button>
+    </div>
+
+    <div class="cat-panel active" id="cat-0">
+      <div class="cat-title">Roupas</div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Casaco grosso ou moletom de forro <span class="chk-badge">essencial</span><span class="chk-note">Noites frias — pode chegar a 10°C</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Calca de frio (jeans ou moletom)<span class="chk-note">Para noites e manhas</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Camisetas leves para o dia<span class="chk-note">3 unidades — o dia esquenta bastante</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Shorts ou calca leve<span class="chk-note">Para trilhas e passeios diurnos</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Meia grossa — ao menos 2 pares<span class="chk-note">Para o frio da madrugada</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Pijama quentinho</div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Roupa de banho<span class="chk-note">O ofuro vai conquistar</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Roupa intima — 3 trocas</div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Roupinha para o almoco do dia 13<span class="chk-note">Vamos num lugar bonito</span></div></div>
+    </div>
+
+    <div class="cat-panel" id="cat-1">
+      <div class="cat-title">Calcados</div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Tenis para trilha <span class="chk-badge">essencial</span><span class="chk-note">Chao de pedra, raiz e terra</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Sandalia ou chinelo<span class="chk-note">Para usar no chale e a noite</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Sandalia de borracha / crocs<span class="chk-note">Opcional — para cachoeira</span></div></div>
+    </div>
+
+    <div class="cat-panel" id="cat-2">
+      <div class="cat-title">Higiene e Saude</div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Protetor solar FPS 50+ <span class="chk-badge">essencial</span><span class="chk-note">UV intenso nas trilhas</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Repelente <span class="chk-badge">essencial</span><span class="chk-note">Trilhas ao entardecer</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Hidratante labial</div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Kit basico de medicamentos<span class="chk-note">Dipirona, antialergico, band-aid</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Produtos de banho e escova de dente</div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Hidratante corporal<span class="chk-note">Inverno + altitude = pele seca</span></div></div>
+    </div>
+
+    <div class="cat-panel" id="cat-3">
+      <div class="cat-title">Conforto e Passeio</div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Garrafinha de agua — ao menos 1L<span class="chk-note">Trilhas podem ser longas</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Oculos de sol <span class="chk-badge">essencial</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Bone ou chapeu<span class="chk-note">Sol direto nas trilhas</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Mochila pequena — day pack<span class="chk-note">Para agua, casaco e camera</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Celular carregado + power bank</div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Lanterna ou frontal<span class="chk-note">Anoitece cedo no inverno (~17h30)</span></div></div>
+      <div class="check-item" onclick="tick(this)"><div class="chk-box"></div><div class="chk-text">Dinheiro em especie<span class="chk-note">Alguns pontos nao aceitam cartao</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer reveal-me">
+  <div class="footer-ornament"></div>
+  <div class="footer-quote">"Prepare a mala e deixa o resto <span>comigo."</span></div>
+  <div class="footer-dates">13 · 14 · 15 de Julho</div>
+</div>
+
+<script>
+// ─── COUNTDOWN ───────────────────────────────
+(function countdown() {
+  const target = new Date('2026-07-13T11:00:00');
+  function pad(n) { return String(n).padStart(2,'0'); }
+  function tick() {
+    const diff = target - new Date();
+    if (diff <= 0) {
+      document.getElementById('cd-blocks').style.display = 'none';
+      document.getElementById('cd-arrived').style.display = 'block';
+      return;
+    }
+    document.getElementById('cd-d').textContent = pad(Math.floor(diff/86400000));
+    document.getElementById('cd-h').textContent = pad(Math.floor(diff%86400000/3600000));
+    document.getElementById('cd-m').textContent = pad(Math.floor(diff%3600000/60000));
+    document.getElementById('cd-s').textContent = pad(Math.floor(diff%60000/1000));
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+// ─── TABS ────────────────────────────────────
+function showDay(i) {
+  document.querySelectorAll('.day-tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.day-panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+function showCat(i) {
+  document.querySelectorAll('.cat-tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.cat-panel').forEach((p,j)=>p.classList.toggle('active',i===j));
+}
+
+// ─── CHECKLIST ───────────────────────────────
+function tick(item) {
+  const box = item.querySelector('.chk-box');
+  const on = box.classList.toggle('done');
+  box.textContent = on ? '✓' : '';
+  item.classList.toggle('done', on);
+  updateProgress();
+}
+function updateProgress() {
+  const all = document.querySelectorAll('.check-item').length;
+  const done = document.querySelectorAll('.check-item.done').length;
+  document.getElementById('pFill').style.width = (all ? done/all*100 : 0) + '%';
+  document.getElementById('pCount').textContent = done + ' / ' + all;
+}
+
+// ─── SUGESTOES ───────────────────────────────
+const STORAGE_KEY = 'sugestoes_gaia_v2';
+
+function loadSugestoes() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+  catch(e) { return []; }
+}
+
+function saveSugestoes(arr) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+}
+
+function renderSugestoes() {
+  const arr = loadSugestoes();
+  const list = document.getElementById('sugestoes-list');
+  const empty = document.getElementById('sugestoes-empty');
+
+  // clear existing cards but keep empty msg
+  list.querySelectorAll('.sugestao-card').forEach(c => c.remove());
+
+  if (arr.length === 0) {
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  arr.forEach((item, idx) => {
+    const initial = (item.nome || '?')[0].toUpperCase();
+    const card = document.createElement('div');
+    card.className = 'sugestao-card';
+    card.innerHTML = `
+      <div class="sugestao-card-avatar">${initial}</div>
+      <div class="sugestao-card-body">
+        <div class="sugestao-card-name">${escapeHtml(item.nome || 'Anonimo')}</div>
+        <div class="sugestao-card-text">${escapeHtml(item.texto)}</div>
+      </div>
+      <div class="sugestao-card-date">${item.data}</div>
+      <button class="sugestao-delete" title="Remover" onclick="removeSugestao(${idx})">×</button>
+    `;
+    list.appendChild(card);
+  });
+}
+
+function addSugestao() {
+  const nome = document.getElementById('sNome').value.trim();
+  const texto = document.getElementById('sTa').value.trim();
+  if (!texto) return;
+
+  const arr = loadSugestoes();
+  arr.unshift({
+    nome: nome || 'Anonimo',
+    texto,
+    data: new Date().toLocaleDateString('pt-BR', {day:'2-digit', month:'2-digit'})
+  });
+  saveSugestoes(arr);
+  renderSugestoes();
+
+  document.getElementById('sNome').value = '';
+  document.getElementById('sTa').value = '';
+
+  const flash = document.getElementById('savedFlash');
+  flash.style.display = 'inline';
+  setTimeout(() => flash.style.display = 'none', 2500);
+}
+
+function removeSugestao(idx) {
+  const arr = loadSugestoes();
+  arr.splice(idx, 1);
+  saveSugestoes(arr);
+  renderSugestoes();
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+
+// ─── STRING LIGHTS + POLAROIDS ────────────────────────────────
+(function() {
+
+  // ── SVG layer que fica sobre tudo (fixed) ──
+  const layer = document.getElementById('lights-layer');
+
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;';
+  layer.appendChild(svg);
+
+  // Definicoes das cordas — cada uma tem tipo, posicao relativa (0..1 da viewport)
+  // e quantas luzinhas. Fotos ficam penduradas em cordas especificas.
+  const ROPES = [
+    // Hero — diagonal descendente da esquerda
+    { type: 'diag', x1:0.0, y1:0.06, x2:1.0, y2:0.20, sag:0.06, bulbs:14, id:'r0' },
+    // Apos clima — horizontal suave
+    { type: 'horiz', x1:0.0, y1:0.38, x2:1.0, y2:0.38, sag:0.04, bulbs:12, id:'r1' },
+    // Meio — diagonal ascendente
+    { type: 'diag', x1:0.0, y1:0.60, x2:1.0, y2:0.48, sag:0.05, bulbs:13, id:'r2' },
+    // Checklist — horizontal
+    { type: 'horiz', x1:0.0, y1:0.80, x2:1.0, y2:0.80, sag:0.035, bulbs:11, id:'r3' },
+  ];
+
+  // Fotos (5 no total) — rope indica em qual corda fica, frac = posicao na corda (0..1)
+  const PHOTOS = [
+    { id:'p0', rope:'r0', frac:0.25, rot:-5, cap:'nosso começo',  src:'FOTO_1' },
+    { id:'p1', rope:'r0', frac:0.72, rot: 4, cap:'juntinhas',     src:'FOTO_2' },
+    { id:'p2', rope:'r1', frac:0.45, rot:-3, cap:'memória',       src:'FOTO_3' },
+    { id:'p3', rope:'r2', frac:0.30, rot: 6, cap:'amor',          src:'FOTO_4' },
+    { id:'p4', rope:'r3', frac:0.65, rot:-4, cap:'julho 2026',    src:'FOTO_5' },
+  ];
+
+  // ── Calcula ponto na corda (catenary aproximada com bezier) ──
+  function ropePoint(rope, frac, W, H) {
+    const x1 = rope.x1 * W, y1 = rope.y1 * H;
+    const x2 = rope.x2 * W, y2 = rope.y2 * H;
+    const mid = { x: (x1+x2)/2, y: (y1+y2)/2 + rope.sag * H };
+    // Bezier quadratica: P = (1-t)^2*P0 + 2(1-t)t*P1 + t^2*P2
+    const t = frac;
+    const mt = 1 - t;
+    return {
+      x: mt*mt*x1 + 2*mt*t*mid.x + t*t*x2,
+      y: mt*mt*y1 + 2*mt*t*mid.y + t*t*y2,
+    };
+  }
+
+  // ── Desenha corda como path bezier ──
+  function ropeD(rope, W, H) {
+    const x1 = rope.x1*W, y1 = rope.y1*H;
+    const x2 = rope.x2*W, y2 = rope.y2*H;
+    const midX = (x1+x2)/2, midY = (y1+y2)/2 + rope.sag*H;
+    return `M ${x1},${y1} Q ${midX},${midY} ${x2},${y2}`;
+  }
+
+  let bulbEls = []; // { circle, glow, phase }
+  let W = 0, H = 0;
+  let polEls = {}; // id -> div
+
+  function build() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    svg.innerHTML = '';
+    bulbEls = [];
+
+    // Defs para filtro de glow
+    const defs = document.createElementNS('http://www.w3.org/2000/svg','defs');
+    defs.innerHTML = `
+      <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glow2" x="-300%" y="-300%" width="700%" height="700%">
+        <feGaussianBlur stdDeviation="6" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    `;
+    svg.appendChild(defs);
+
+    ROPES.forEach(rope => {
+      // Corda
+      const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d', ropeD(rope, W, H));
+      path.setAttribute('stroke','rgba(196,169,125,0.30)');
+      path.setAttribute('stroke-width','1.5');
+      path.setAttribute('fill','none');
+      svg.appendChild(path);
+
+      // Luzinhas
+      for (let i=0; i<=rope.bulbs; i++) {
+        const frac = i / rope.bulbs;
+        const pt = ropePoint(rope, frac, W, H);
+        const phase = Math.random() * Math.PI * 2;
+
+        // Fio descendo da corda
+        const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+        line.setAttribute('x1', pt.x); line.setAttribute('y1', pt.y);
+        line.setAttribute('x2', pt.x); line.setAttribute('y2', pt.y + 5);
+        line.setAttribute('stroke','rgba(196,169,125,0.25)');
+        line.setAttribute('stroke-width','0.8');
+        svg.appendChild(line);
+
+        // Halo externo
+        const halo = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        halo.setAttribute('cx', pt.x); halo.setAttribute('cy', pt.y + 5);
+        halo.setAttribute('r','9');
+        halo.setAttribute('fill','rgba(255,200,60,0.0)');
+        halo.setAttribute('filter','url(#glow2)');
+        svg.appendChild(halo);
+
+        // Bolinha
+        const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        c.setAttribute('cx', pt.x); c.setAttribute('cy', pt.y + 5);
+        c.setAttribute('r','2.5');
+        c.setAttribute('fill','#ffe090');
+        c.setAttribute('filter','url(#glow)');
+        svg.appendChild(c);
+
+        bulbEls.push({ c, halo, phase, pt });
+      }
+    });
+
+    // Polaroids — recria posicoes
+    PHOTOS.forEach(p => {
+      const rope = ROPES.find(r => r.id === p.rope);
+      const pt = ropePoint(rope, p.frac, W, H);
+
+      let div = polEls[p.id];
+      if (!div) {
+        div = document.createElement('div');
+        div.className = 'pol';
+        div.innerHTML = `
+          <div class="pol-clip"></div>
+          <div class="pol-frame">
+            ${p.src.startsWith('FOTO_')
+              ? `<div class="pol-ph">✦</div>`
+              : `<img src="${p.src}" alt="${p.cap}">`
+            }
+            <div class="pol-cap">${p.cap}</div>
+          </div>`;
+        layer.appendChild(div);
+        polEls[p.id] = div;
+
+        // Scroll reveal
+        setTimeout(() => div.classList.add('show'), 300 + PHOTOS.indexOf(p) * 200);
+      }
+
+      div.style.left = (pt.x - 50) + 'px';
+      div.style.top  = pt.y + 'px';
+      div.style.transform = `rotate(${p.rot}deg)`;
+    });
+  }
+
+  // ── Animacao de brilho ──
+  let t = 0;
+  function animate() {
+    t += 0.025;
+    bulbEls.forEach(b => {
+      const bright = 0.55 + 0.45 * Math.sin(t + b.phase);
+      const alpha  = 0.25 + 0.75 * bright;
+      const r = 2 + 1.5 * bright;
+      b.c.setAttribute('r', r);
+      b.c.setAttribute('fill', `rgba(255,${Math.round(190 + 60*bright)},${Math.round(40 + 80*bright)},${alpha})`);
+      b.halo.setAttribute('r', 8 + 6*bright);
+      b.halo.setAttribute('fill', `rgba(255,200,60,${0.08 * bright})`);
+    });
+    requestAnimationFrame(animate);
+  }
+
+  build();
+  animate();
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 100);
+  });
+
+})();
+
+// ─── INIT ─────────────────────────────────────
+window.addEventListener('load', () => {
+  updateProgress();
+  renderSugestoes();
+});
+
+// ─── SCROLL REVEAL ───────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal-me').forEach(el => observer.observe(el));
+});
+
+</script>
+</body>
+</html>
